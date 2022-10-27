@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 
 const Counter = () => {
@@ -19,10 +19,15 @@ const Counter = () => {
    const handleDecrement = () => {
       setCount((prevState) => prevState - 1);
    };
+   const handleTagChange = () => {
+
+   };
 
    return (
       <>
-         <ul>{tags.map((tag) => (<li key={tag}>{tag}</li>))}</ul>
+         <ul>{tags.map((tag) => (
+            <li key={tag} className='btn btn-primary btn-sm m-2' onClick={handleTagChange}>{tag}</li>
+         ))}</ul>
          <span className={getBageClasses()}>{formatCount()}</span>
          <button className='btn btn-primary btn-sm m-2' onClick={handleIncrement}>+</button>
          <button className='btn btn-primary btn-sm m-2' onClick={handleDecrement}>-</button>
