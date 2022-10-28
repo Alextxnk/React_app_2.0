@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 const Counter = (props) => {
-   console.log(props);
-   const [count, setCount] = useState(0);
+   const [count, setCount] = useState(props.value);
 
    const formatCount = () => {
       return count === 0 ? 'empty' : count;
